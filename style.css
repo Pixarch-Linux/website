@@ -10,9 +10,9 @@
 
 @font-face {
   font-family: "Monocraft";
-  src: url("fonts/monocraft_1-webfont.woff") format("woff");
-  src: url("fonts/monocraft_1-webfont.woff2") format("woff2"),
-  url("fonts/Monocraft.otf") format("opentype"),
+  src: url("media/fonts/monocraft_1-webfont.woff") format("woff");
+  src: url("media/fonts/monocraft_1-webfont.woff2") format("woff2"),
+  url("media/fonts/Monocraft.otf") format("opentype"),
   }
 
 .grid {
@@ -899,7 +899,7 @@ input[type=checkbox] {
 }
 input[type=checkbox] + .backgrounddm~.flex-nav .dmlabel {
   display:inline-block;
-  background:url(lightflower.png) no-repeat;
+  background:url(media/lightflower.png) no-repeat;
   height: 32px;
   width: 32px;
   background-size: 100%;
@@ -910,7 +910,7 @@ input[type=checkbox] + .backgrounddm~.flex-nav .dmlabel {
   
 }
 input[type=checkbox]:checked + .backgrounddm~.flex-nav .dmlabel{
-  background:url(darkflower.png) no-repeat;
+  background:url(media/darkflower.png) no-repeat;
   height: 32px;
   width: 32px;
   display:inline-block;
