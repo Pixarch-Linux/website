@@ -1,0 +1,408 @@
+/* Base styles and variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --background-color: #ffffff;
+    --text-color: #2c3e50;
+    --card-background: #f8f9fa;
+    --transition: all 0.3s ease;
+    --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  @font-face {
+    font-family: 'Monocraft';
+    src: url('/fonts/Monocraft.otf') format('opentype');
+  }
+  
+  /* Dark mode overrides */
+  [name="darkmode"]:checked ~ * {
+    --primary-color: #ecf0f1;
+    --secondary-color: #e74c3c;
+    --background-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --card-background: #34495e;
+  }
+
+  /* Navigation Styles */
+.flex-nav {
+    background: var(--background-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: 'Monocraft', monospace;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flex-nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Logo */
+  #logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  #highlight {
+    color: var(--secondary-color);
+    margin-left: 2px;
+  }
+  
+  /* Navigation Menu */
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin-left: 2rem;
+  }
+  
+  nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1rem;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: var(--transition);
+  }
+  
+  nav ul li a:hover::after,
+  nav ul li a.active::after {
+    width: 100%;
+  }
+  
+  nav ul li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  nav ul li a.active {
+    color: var(--secondary-color);
+  }
+  
+  /* Dark Mode Toggle */
+  #darkmode {
+    display: none;
+  }
+  
+  .dmlabel {
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+  
+  .dmlabel::before {
+    content: '🌙';
+    font-size: 1.2rem;
+  }
+  
+  #darkmode:checked ~ * .dmlabel::before {
+    content: '☀️';
+  }
+  
+  /* Mobile Menu */
+  .toggle-nav {
+    display: none;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .toggle-nav i {
+    margin-left: 0.5rem;
+  }
+  
+  /* Responsive Navigation */
+  @media (max-width: 768px) {
+    .toggle-nav {
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--background-color);
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    nav ul.show {
+      display: flex;
+    }
+  
+    nav ul li {
+      margin: 1rem 0;
+    }
+  
+    nav ul li a {
+      padding: 0.5rem 1rem;
+    }
+  
+    .column-xs-9 {
+      grid-column: span 9;
+    }
+  
+    .column-xs-3 {
+      grid-column: span 3;
+    }
+  }
+  
+  /* Navigation Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  @media (min-width: 768px) {
+    .column-md-8 {
+      grid-column: span 8;
+    }
+  
+    .column-md-4 {
+      grid-column: span 4;
+    }
+  }
+  
+  /* Downloads page layout */
+  .downloads-section {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: var(--background-color);
+    font-family: 'Monocraft', monospace;
+  }
+  
+  /* Hero section */
+  .downloads-hero {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  
+  .downloads-hero .title {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .downloads-hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+  
+  /* Download cards section */
+  .download-options {
+    padding: 4rem 0;
+  }
+  
+  .download-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .download-card.featured {
+    border: 2px solid var(--secondary-color);
+  }
+  
+  .download-card h2 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .download-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Specifications list */
+  .specs {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  
+  .specs li {
+    color: var(--text-color);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .specs li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+  }
+  
+  /* Download buttons */
+  .download-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--transition);
+    margin: 1rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+  }
+  
+  .checksum {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+    transition: var(--transition);
+  }
+  
+  .checksum:hover {
+    color: var(--secondary-color);
+    opacity: 1;
+  }
+  
+  /* Installation guide section */
+  .installation-guide {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .guide-step {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  
+  .guide-step:hover {
+    transform: translateX(5px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  .guide-step h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .guide-step h3::before {
+    content: '#';
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .guide-step p {
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .downloads-hero .title {
+      font-size: 2rem;
+    }
+    
+    .download-card {
+      margin-bottom: 2rem;
+    }
+    
+    .guide-step {
+      margin-bottom: 1.5rem;
+    }
+    
+    .download-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  /* Grid system */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .column-md-4 {
+      grid-column: span 4;
+    }
+    
+    .column-md-6 {
+      grid-column: span 6;
+    }
+  }
+  
+  .column-xs-12 {
+    grid-column: span 12;
+  }
