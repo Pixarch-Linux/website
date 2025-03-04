@@ -10,10 +10,8 @@
 
 @font-face {
   font-family: "Monocraft";
-  src: url("media/fonts/monocraft_1-webfont.woff") format("woff");
-  src: url("media/fonts/monocraft_1-webfont.woff2") format("woff2"),
-  url("media/fonts/Monocraft.otf") format("opentype"),
-  }
+  src: url("monocraft_1-webfont.woff") format("woff");
+}
 
 .grid {
   display: flex;
