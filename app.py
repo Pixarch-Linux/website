@@ -8,6 +8,8 @@ app.config.from_object(__name__)
 def home():
     return render_template('index.html')
 
+
+# This will give error as about.html is left to make 
 @app.route('/about')
 def about():
     return render_template('about.html')
