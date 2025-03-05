@@ -1,18 +1,173 @@
 {% extends "base.html" %}
 {% block content %}
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pixarch - Downloads</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Pixarch - Downloads</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
+    <style>
+        @font-face {
+            font-family: 'Monocraft';
+            src: url('/fonts/Monocraft.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'Monocraft', monospace;
+            background: #f4f4f4;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0rem;
+        }
+
+        .hero {
+            text-align: center;
+            color: black;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .downloads {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .download-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .download-card h2 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .installation-guide {
+            background: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .guide-step {
+            background: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .guide-step h3 {
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-</main>
+    <div class="hero">
+        <div class="container">
+            <h1>Download Pixarch</h1>
+            <p>Choose your perfect Linux distribution flavor</p>
+        </div>
+    </div>
 
+    <div class="container downloads">
+        <div class="download-card">
+            <h2>Minimal Edition</h2>
+            <p>Lightweight base system with i3 window manager</p>
+            <ul>
+                <li>Size: 1.2 GB</li>
+                <li>RAM: 512MB minimum</li>
+                <li>x86_64 architecture</li>
+            </ul>
+            <a href="#" class="download-button">Download ISO</a>
+        </div>
+
+        <div class="download-card">
+            <h2>Standard Edition</h2>
+            <p>Complete desktop environment with XFCE</p>
+            <ul>
+                <li>Size: 2.1 GB</li>
+                <li>RAM: 2GB recommended</li>
+                <li>x86_64 architecture</li>
+            </ul>
+            <a href="#" class="download-button">Download ISO</a>
+        </div>
+
+        <div class="download-card">
+            <h2>Full Edition</h2>
+            <p>All desktop environments included</p>
+            <ul>
+                <li>Size: 3.5 GB</li>
+                <li>RAM: 4GB recommended</li>
+                <li>x86_64 architecture</li>
+            </ul>
+            <a href="#" class="download-button">Download ISO</a>
+        </div>
+    </div>
+
+    <div class="installation-guide">
+        <div class="container">
+            <h2>Installation Guide</h2>
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <h3>1. Create Bootable USB</h3>
+                    <p>Use tools like Rufus or Etcher to create a bootable USB drive</p>
+                </div>
+                <div class="guide-step">
+                    <h3>2. Boot from USB</h3>
+                    <p>Enter BIOS/UEFI and select USB as boot device</p>
+                </div>
+                <div class="guide-step">
+                    <h3>3. Install Pixarch</h3>
+                    <p>Follow graphical installer instructions</p>
+                </div>
+                <div class="guide-step">
+                    <h3>4. First Boot</h3>
+                    <p>Complete initial setup and enjoy Pixarch</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
 {% endblock %}
