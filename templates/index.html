@@ -12,26 +12,6 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<input type="checkbox" name="darkmode" id="darkmode" value="darkmode">
-<div class="backgrounddm"></div>
-<nav class="flex-nav">
-  <div class="container">
-    <div class="grid">
-      <div class="column-xs-9 column-md-8">
-        <p id="logo">Pixarch<span id="highlight">.</span></p>
-      </div>
-      <div class="column-xs-3 column-md-4">
-        <a href="#" class="toggle-nav">Menu <i class="ion-navicon-round"></i></a>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="https://www.github.com/Pixarch-Linux/pixarch" target="_blank">GitHub</a></li>
-		  <li><a href="{{ url_for('download') }}">Download</a></li>
-          <li><label for="darkmode" class="dmlabel"></label></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
 <main class="intro-section">
   <div class="container">
     <div class="grid">
@@ -48,7 +28,7 @@
               </div>
               <div class="column-xs-12 column-md-10">
                 <div class="image-holder">
-                  <img src="/media/grubwallpaper.png">
+						<img src="{{ url_for('static', filename='/media/grubwallpaper.png') }}">
                 </div>
                 <div class="grid">
                   <div class="column-xs-12 column-md-9">
@@ -160,7 +140,7 @@
   </div>
 </main>
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <script  src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>

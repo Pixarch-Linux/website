@@ -1,81 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Pixarch - Downloads</title>
+  <title>Pixarch</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css')}}"> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 </head>
 <body>
-  <input type="checkbox" name="darkmode" id="darkmode" value="darkmode">
-  <div class="backgrounddm"></div>
-  <nav class="flex-nav">
-    <div class="container">
-      <div class="grid">
-        <div class="column-xs-9 column-md-8">
-          <p id="logo">Pixarch<span id="highlight">.</span></p>
-        </div>
-        <div class="column-xs-3 column-md-4">
-          <a href="#" class="toggle-nav">Menu <i class="ion-navicon-round"></i></a>
-          <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="https://www.github.com/Pixarch-Linux/pixarch" target="_blank">GITHUB</a></li>
-            <li><a href="downloads.html" class="active">DOWNLOAD</a></li>
-            <li><label for="darkmode" class="dmlabel"></label></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  
-  <main class="downloads-section">
-    <div class="container">
-      <div class="grid">
-        <div class="column-xs-12">
-          <section class="downloads-hero">
-            <h1 class="title"><span class="underline">Download Pixarch</span></h1>
-            <p class="subtitle">Choose your preferred flavor</p>
-          </section>
-          
-          <section class="download-options">
-            <div class="grid">
-              <div class="column-xs-12 column-md-4">
-                <div class="download-card featured">
-                  <h2>Standard Edition</h2>
-                  <p>Complete desktop with i3 and Qtile</p>
-                  <ul class="specs">
-                    <li>Size: 2.1 GB</li>
-                    <li>RAM: 2GB recommended</li>
-                    <li>x86_64 architecture</li>
-                  </ul>
-                  <a href="#" class="download-button">Download ISO</a>
-                  <a href="#" class="checksum">Verify Checksum</a>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          <section class="installation-guide">
-            <h2 class="section-title">Installation Guide</h2>
-            <div class="grid">
-              <div class="column-xs-12 column-md-6">
-                <div class="guide-step">
-                  <h3>1. Create bootable USB</h3>
-                  <p>Use tools like Rufus, Etcher, or dd command to create your bootable USB drive.</p>
-                </div>
-                <div class="guide-step">
-                  <h3>2. Boot from USB</h3>
-                  <p>Enter your BIOS/UEFI settings and select the USB drive as boot device.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  </main>
+<!-- partial:index.partial.html -->
+</main>
+<!-- partial -->
+
 </body>
 </html>
+{% endblock %}
