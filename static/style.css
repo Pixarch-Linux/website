@@ -874,6 +874,7 @@ button {
     margin: 0;
   }
 }
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -914,8 +915,11 @@ input[type=checkbox]:checked + .backgrounddm~.flex-nav .dmlabel{
   display:inline-block;
   background-size: 100%; 
 }
-input:checked + .backgrounddm~.flex-nav #logo{
+input:checked + .backgrounddm~.flex-nav a{
   color: white;
+}
+input:checked + .backgrounddm~.flex-nav a:hover{
+  color: #8d8d8d;
 }
 input:checked + .backgrounddm~.flex-nav ul{
   background: black;

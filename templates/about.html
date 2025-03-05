@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixarch - About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: 'Monocraft';
+            src: url('/fonts/Monocraft.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'Monocraft', monospace;
+            background-color: #f4f4f4;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .section-card h2 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .section-card p {
+            color: #2c3e50;
+        }
+
+        .team-section {
+            background-color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .team-member h3 {
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 4rem 0;
+            background: #e74c3c;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #e74c3c;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome to Pixarch</h1>
+            <p>A minimalist Linux distribution designed for developers, creators, and tech enthusiasts who value performance, aesthetics, and freedom.</p>
+        </div>
+    </div>
+
+    <div class="container sections">
+        <div class="section-card">
+            <h2>Our Mission</h2>
+            <p>To create a Linux distribution that combines the raw power of Arch Linux with a beautifully crafted, user-friendly experience. We believe in giving users complete control without sacrificing simplicity.</p>
+        </div>
+        <div class="section-card">
+            <h2>Design Philosophy</h2>
+            <p>Minimalism meets functionality. Every pixel, every configuration is carefully considered to provide a seamless, distraction-free computing environment that looks as good as it performs.</p>
+        </div>
+        <div class="section-card">
+            <h2>Open Source Commitment</h2>
+            <p>We're dedicated to the open-source ecosystem. Pixarch is built on transparency, community collaboration, and the belief that software should be free, powerful, and accessible to everyone.</p>
+        </div>
+    </div>
+
+    <div class="team-section">
+        <div class="container">
+            <h2 style="text-align: center; color: #e74c3c; margin-bottom: 2rem;">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Lead Developer</h3>
+                    <p>Architects the core system and ensures performance optimization.</p>
+                </div>
+                <div class="team-member">
+                    <h3>UI/UX Designer</h3>
+                    <p>Crafts the visual experience and user interface design.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Community Manager</h3>
+                    <p>Bridges communication between developers and users.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Infrastructure</h3>
+                    <p>Manages build systems and release infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <div class="container">
+            <h2>Join the Pixarch Community</h2>
+            <p>Contribute, learn, and grow with us. Open source is about collaboration.</p>
+            <a href="https://github.com/Pixarch-Linux/pixarch" class="cta-button">Explore on GitHub</a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}
